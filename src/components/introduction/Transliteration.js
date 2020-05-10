@@ -12,13 +12,13 @@ export default class Transliteration extends React.Component {
     this.setState({ output: func(e.target.value) });
     dispatchEvent(new Event('encodeEvent', { bubbles: true }));
   }
-  swapDirection() {
+  swapDirection(e) {
+    e.preventDefault();
     this.setState({ direction: !this.state.direction });
-    dispatchEvent(new Event('swapEvent', { bubbles: true }));
   }
   render() {
     return (
-      <form>
+      <form onSubmit={this.swapDirection}>
         <label>
           {this.state.direction ? 'Latin' : 'Javanese'}:
           <input type="text" name="latin" onChange={this.tryEncode} />
@@ -34,7 +34,7 @@ export default class Transliteration extends React.Component {
         </label>
         <br />
         &nbsp;
-        <button onClick={this.swapDirection}>SWAP</button>
+        <input type="submit" value="SWAP"/>
       </form>
     );
   }
