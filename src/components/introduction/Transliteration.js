@@ -1,33 +1,40 @@
 import React from 'react';
-import { encode } from 'hanacaraka';
+import { encode, decode } from 'hanacaraka';
 export default class Transliteration extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { latin: '', javanese: '' };
+    this.state = { direction: true, output: '' };
     this.tryEncode = this.tryEncode.bind(this);
-    this.tryDecode = this.tryDecode.bind(this);
+    this.swapDirection = this.swapDirection.bind(this);
   }
   tryEncode(e) {
-    this.setState({ javanese: encode(e.target.value) });
+    const func = this.state.direction ? encode : decode;
+    this.setState({ output: func(e.target.value) });
     dispatchEvent(new Event('encodeEvent', { bubbles: true }));
   }
-  tryDecode(e) {}
+  swapDirection() {
+    this.setState({ direction: !this.state.direction });
+    dispatchEvent(new Event('swapEvent', { bubbles: true }));
+  }
   render() {
     return (
       <form>
         <label>
-          Latin:
+          {this.state.direction ? 'Latin' : 'Javanese'}:
           <input type="text" name="latin" onChange={this.tryEncode} />
         </label>
         <label>
-          Javanese:
+          {this.state.direction ? 'Javanese' : 'Latin'}:
           <input
             type="text"
             name="javanese"
-            value={this.state.javanese}
-            onChange={this.tryDecode}
+            value={this.state.output}
+            readOnly
           />
         </label>
+        <br />
+        &nbsp;
+        <button onClick={this.swapDirection}>SWAP</button>
       </form>
     );
   }
