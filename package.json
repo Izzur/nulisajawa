@@ -11,9 +11,9 @@
     "email": "anubhav.srivastava00@gmail.com"
   },
   "dependencies": {
-    "gatsby": "^2.24.9",
-    "gatsby-plugin-manifest": "^2.4.20",
-    "gatsby-plugin-offline": "^3.2.20",
+    "gatsby": "^2.24.11",
+    "gatsby-plugin-manifest": "^2.4.21",
+    "gatsby-plugin-offline": "^3.2.21",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-sass": "^2.3.12",
     "hanacaraka": "^0.2.0",
@@ -21,7 +21,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
-    "react-scrollspy": "^3.4.2",
+    "react-scrollspy": "^3.4.3",
     "smoothscroll-polyfill": "^0.4.4"
   },
   "scripts": {
