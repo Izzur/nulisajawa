@@ -11,9 +11,9 @@
     "email": "anubhav.srivastava00@gmail.com"
   },
   "dependencies": {
-    "gatsby": "^2.24.23",
-    "gatsby-plugin-manifest": "^2.4.21",
-    "gatsby-plugin-offline": "^3.2.21",
+    "gatsby": "^2.24.33",
+    "gatsby-plugin-manifest": "^2.4.22",
+    "gatsby-plugin-offline": "^3.2.22",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-sass": "^2.3.12",
     "hanacaraka": "^0.2.0",
